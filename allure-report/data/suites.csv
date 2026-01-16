@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1711","open sauce demo page","webkit","2026-01-16","passed","2026-01-16","","logindemo.spec.ts","",""
+"","2797","open sauce demo page","firefox","2026-01-16","passed","2026-01-16","","logindemo.spec.ts","",""
+"","1200","open sauce demo page","chromium","2026-01-16","passed","2026-01-16","","logindemo.spec.ts","",""
