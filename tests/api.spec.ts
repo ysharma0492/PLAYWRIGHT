@@ -46,7 +46,7 @@ test('test2', async ({ request }) => {
 });
 
 test('test3', async ({ request }) => {
-  const response = await request.put('https://api.restful-api.dev/objects/ff8081819782e69e019bc8ae6bd76420b', {
+  const response = await request.put('https://api.restful-api.dev/objects/ff8081819782e69e019bc8b6389f6427', {
     headers: {"Content-Type": "application/json"},
     data: {
    "name": "Apple MacBook Pro 16",
@@ -69,7 +69,7 @@ test('test3', async ({ request }) => {
 
 test('test4', async ({ request }) => {
   const response = await request.patch(
-    'https://api.restful-api.dev/objects/ff8081819782e69e019bc8ae6bd76420',
+    'https://api.restful-api.dev/objects/ff8081819782e69e019bc8b6389f6427',
     {
       headers: {
         'Content-Type': 'application/json',
