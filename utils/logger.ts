@@ -15,6 +15,7 @@ class Logger {
   constructor() {
     this.logDir = path.join(process.cwd(), 'logs');
     this.ensureLogDirectory();
+    this.cleanOldLogs();
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
     this.logFile = path.join(this.logDir, `test-${timestamp}.log`);
   }
@@ -22,6 +23,22 @@ class Logger {
   private ensureLogDirectory(): void {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
+    }
+  }
+
+  private cleanOldLogs(): void {
+    try {
+      if (fs.existsSync(this.logDir)) {
+        const files = fs.readdirSync(this.logDir);
+        files.forEach((file) => {
+          const filePath = path.join(this.logDir, file);
+          if (fs.statSync(filePath).isFile() && file.endsWith('.log')) {
+            fs.unlinkSync(filePath);
+          }
+        });
+      }
+    } catch (error) {
+      console.error('Failed to clean old logs:', error);
     }
   }
 
