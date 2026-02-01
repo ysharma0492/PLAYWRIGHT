@@ -22,7 +22,10 @@ export class LoginPage {
     await this.usernameInput.fill(username);
     await this.page.getByPlaceholder('Username').fill(username);
     await this.passwordInput.fill(password);
+    const buttonText = await this.loginButton.textContent();  
+    console.log(`Button text is: ${buttonText}`);
     await this.loginButton.click();
+    
   }    
 
   async login_close() {
